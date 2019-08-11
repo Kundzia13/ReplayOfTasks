@@ -1,5 +1,3 @@
-package Task_1_Coins;
-
 import java.util.Arrays;
 import java.util.Collections;
 
