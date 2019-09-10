@@ -15,7 +15,7 @@
 
 import java.util.Arrays;
 
-public class LiczbyBinarne {
+public class BinaryGap {
     public int solution(int N) {
         String word = "";
         if (N >= 0 && N <= 2_147_483_647) {
@@ -57,7 +57,7 @@ public class LiczbyBinarne {
     }
 
     public static void main(String[] args) {
-        LiczbyBinarne solution = new LiczbyBinarne();
+        BinaryGap solution = new BinaryGap();
         System.out.println(solution.solution(1041));
         System.out.println(solution.solution(15));
         System.out.println(solution.solution(32));
