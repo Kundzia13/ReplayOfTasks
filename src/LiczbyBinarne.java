@@ -13,6 +13,8 @@
 //        Write an efficient algorithm for the following assumptions:
 //        N is an integer within the range [1..2,147,483,647].
 
+import java.util.Arrays;
+
 public class LiczbyBinarne {
     public int solution(int N) {
         String word = "";
@@ -26,24 +28,26 @@ public class LiczbyBinarne {
             }
         }
         int result = 0;
+
+        StringBuilder reverseWord = new StringBuilder();
+        reverseWord.append(word);
+        reverseWord = reverseWord.reverse();
+        String splited = new String(reverseWord);
+        System.out.println(splited);
         if (word.contains("0")) {
-            StringBuilder reverseWord = new StringBuilder();
-            reverseWord.append(word);
-            reverseWord = reverseWord.reverse();
-            System.out.println(reverseWord);
-            String splited = new String(reverseWord);
             String[] splitedArray = splited.split("1");
-            int y=splitedArray.length-1;
-            if (reverseWord.charAt(reverseWord.length() - 1) == 0) {
-            y--;
+            Arrays.stream(splitedArray).forEach(System.out::println);
+            int y=splitedArray.length;
+            if (splited.endsWith("0")) {
+                y-=1;
             }
-            int[] a = new int[y];
-            if (y > 0) {
+            int[] a = new int[y-1];
+            if (y > 1) {
                 for (int i = 1; i < y; i++) {
-                    a[i] = splitedArray[i].length();
+                    a[i-1] = splitedArray[i].length();
                     for (int j = 0; j < a.length; j++) {
-                        if (a[i] > result) {
-                            result = a[i];
+                        if (a[j] > result) {
+                            result = a[j];
                         }
                     }
                 }
